@@ -14,6 +14,6 @@ export class HomeComponent implements OnInit {
 
   SelectModel(model: string) {
     window.localStorage.setItem("vrm-model", model);
-    window.location.href='menu';
+    window.location.href='webapp';
   }
 }
