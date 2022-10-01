@@ -29,7 +29,16 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/javascripts/lib_scripts/three.js",
+              "src/assets/javascripts/lib_scripts/GLTFLoader.js",
+              "src/assets/javascripts/lib_scripts/OrbitControls.js",
+              "https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.5.1635989137/holistic.js",
+              "src/assets/javascripts/lib_scripts/camera_utils.js",
+              "src/assets/javascripts/lib_scripts/modeling.js",
+              "src/assets/javascripts/scripts/script.js",
+              "src/assets/javascripts/scripts/test.js"
+            ]
           },
           "configurations": {
             "production": {
