@@ -33,11 +33,15 @@
               "src/assets/javascripts/lib_scripts/three.js",
               "src/assets/javascripts/lib_scripts/GLTFLoader.js",
               "src/assets/javascripts/lib_scripts/OrbitControls.js",
-              "https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.5.1635989137/holistic.js",
+              "src/assets/javascripts/lib_scripts/three-vrm.js",
+              "src/assets/javascripts/lib_scripts/holistic.js",
+              "src/assets/javascripts/lib_scripts/drawing_utils.js",
               "src/assets/javascripts/lib_scripts/camera_utils.js",
+              "src/assets/javascripts/lib_scripts/kalidokit.umd.js",
+              "src/assets/javascripts/lib_scripts/RecordRTC.js",
+              "src/assets/javascripts/lib_scripts/ffmpeg.min.js",
               "src/assets/javascripts/lib_scripts/modeling.js",
-              "src/assets/javascripts/scripts/script.js",
-              "src/assets/javascripts/scripts/test.js"
+              "src/assets/javascripts/scripts/script.js"
             ]
           },
           "configurations": {
