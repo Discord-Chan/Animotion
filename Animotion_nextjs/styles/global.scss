@@ -147,9 +147,26 @@ body {
 
 /*#region dances*/
 
+.video-container {
+    margin-left: 100em;
+    margin-right: 10em;
+}
+
+.dance-container {
+    display: inline-block;
+    text-align: center;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+}
+
 .dance-image {
-    max-width: 50em;
-    width: 30em;
+    max-width: 30em;
+    max-height: 15em;
+}
+
+.dance-name {
+    color: white;
+    font-size: 1.5em;
 }
 
 /*#endregion*/
