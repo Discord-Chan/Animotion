@@ -1,0 +1,172 @@
+/*#region actually global*/
+
+body {
+    background-image: url('../public/images/backgrounds/mostly_black1.jpg');
+    -moz-background-size: cover;
+    background-size: cover;
+
+    background-color: black;
+}
+
+@font-face {
+    font-family: 'FastMotion';
+    src: url('../public/fonts/FastMotion.ttf');
+}
+
+#main-headline {
+    font-family: FastMotion;
+    font-size: 7em;
+    color: #8D4BE0;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+/*#endregion*/
+
+
+/*#region vrm selectors*/
+
+.vrm-selector {
+    margin-left: 125px;
+    margin-right: 125px;
+}
+
+.vrm-image {
+    max-width: 400px;
+    max-height: 500px;
+    border-radius: 8px;
+}
+
+.vrm-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 100px;
+}
+
+/*#endregion*/
+
+
+/*#region rgb glow on vrm selectors*/
+
+.glow-on-hover {
+    border: none;
+    outline: none;
+    background: black;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/*#endregion*/
+
+
+/*#region buttons*/
+
+#player-button {
+    float: left;
+    margin-left: 4em;
+}
+
+#about-button {
+    float: right;
+    margin-right: 4em;
+}
+
+/* tailwind button */
+.link-button {
+    background-color: #0A0E17;
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    box-sizing: border-box;
+    color: #8D4BE0;
+    cursor: pointer;
+    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .75rem 1.2rem;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    text-decoration-thickness: auto;
+    transition-duration: .2s;
+    transition-property: background-color,border-color,color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+}
+
+.link-button:hover {
+    background-color: #374151;
+}
+
+.link-button:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+    .link-button {
+        padding: .9rem 4rem;
+    }
+}
+
+/*#endregion*/
+
+
+/*#region dances*/
+
+.video-container {
+    margin-left: 100em;
+    margin-right: 10em;
+}
+
+.dance-container {
+    display: inline-block;
+    text-align: center;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+}
+
+.dance-image {
+    max-width: 30em;
+    max-height: 15em;
+}
+
+.dance-name {
+    color: white;
+    font-size: 1.5em;
+}
+
+/*#endregion*/
