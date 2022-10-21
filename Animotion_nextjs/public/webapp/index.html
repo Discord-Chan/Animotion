@@ -26,18 +26,20 @@
     <link rel="stylesheet" href="style_css/screen_style.css" />
   </head>
   <body style="background-image: url(assets/animotion_pattern2.jpg)">
-    <div
-      style="background-image: url(assets/animotion_pattern2.jpg)"
-      class="screen"
-    >
-      <div id="options">
+    <div class="return_button">
+      <a class="button2 button1" href="selection.html"
+        ><p><i class="arrow left"></i> back to menu</p></a
+      >
+    </div>
+    <div style="background-color: rgba(51, 170, 51, 0)" class="screen">
+      <!---<div id="options">
         <span class="option make_white">webm video</span>
         <label class="switch">
           <input id="convert-to-gif" type="checkbox" />
           <span class="slider round"></span>
         </label>
         <span class="option make_white">gif (Chrome only)</span>
-      </div>
+      </div>-->
       <video controls autoplay playsinline></video>
 
       <div id="controls">
@@ -123,8 +125,8 @@
 
           function captureCallback(target) {
             video.srcObject = target;
-            const checkbox = document.getElementById("convert-to-gif");
-            checkbox.disabled = true;
+            //const checkbox = document.getElementById("convert-to-gif");
+            //checkbox.disabled = true;
 
             var recorder = RecordRTC(target, {
               type: "video",
@@ -143,14 +145,15 @@
                 video.src = fileUrl;
 
                 target.stop();
-                if (checkbox.checked === true) {
+                /*if (checkbox.checked === true) {
                   convert(fileUrl).then(() => {
                     checkbox.disabled = false;
                   });
                 } else {
                   recorder.save("screen_recording.webm");
                   checkbox.disabled = false;
-                }
+                }*/
+                recorder.save("screen_recording.webm");
                 recorder.destroy();
                 recorder = null;
               });
@@ -255,16 +258,13 @@
     <div class="preview">
       <video
         class="input_video video_transformer"
-        width="1280px"
-        height="720px"
+        width="1920px"
+        height="1080px"
         autoplay
         muted
         playsinline
       ></video>
       <canvas class="guides"></canvas>
-      <section>
-        <a class="button2 button1" href="selection.html"><p>back to menu</p></a>
-      </section>
     </div>
     <script src="scripts/script.js"></script>
   </body>
