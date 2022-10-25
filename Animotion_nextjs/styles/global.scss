@@ -1,5 +1,7 @@
 /*#region actually global*/
 
+$main-font-color:#8D4BE0;
+
 body {
     background-image: url('../public/images/backgrounds/anime_background.jpg');
     -moz-background-size: cover;
@@ -18,24 +20,13 @@ body {
     color: white;
     text-align: center;
     margin-top: 0.5em;
-    color: #8D4BE0;
+    color: $main-font-color;
 }
 
 /*#endregion*/
 
 
 /*#region logo */
-
-#logo {
-    font-family: FastMotion;
-    font-size: 7em;
-    color: #8D4BE0;
-    text-align: center;
-
-    // TODO
-    // looks good in chrome but not in firefox
-    margin-top: 0.75em;
-}
 
 @mixin glitchCopy {
     content: attr(data-text);
@@ -46,19 +37,25 @@ body {
     height: 100%;
 }
 
-.glitch {
-    position: relative;
-    color: #fff;
-    font-size: 4em;
+#logo {
+    font-family: FastMotion;
+    font-size: 7em;
+    color: $main-font-color;
+    text-align: center;
+
+    // TODO
+    // looks good in chrome but not in firefox
+    margin-top: 0.75em;
+
     letter-spacing: 0.1em;
-    animation: glitch-skew 1s infinite linear alternate-reverse;
+    animation: glitch-skew 2.5s infinite linear alternate-reverse;
 
     &::before {
         @include glitchCopy;
         left: 2px;
         text-shadow: -2px 0 #ff00c1;
         clip: rect(44px, 450px, 56px, 0);
-        animation: glitch-anim 10s infinite linear alternate-reverse;
+        animation: glitch-anim 7s infinite linear alternate-reverse;
     }
 
     &::after {
@@ -66,7 +63,7 @@ body {
         left: -2px;
         text-shadow: -2px 0 #ff00c1, 2px 2px #ff00c1;
         clip: rect(44px, 450px, 56px, 0);
-        animation: glitch-anim2 10s infinite linear alternate-reverse;
+        animation: glitch-anim2 7s infinite linear alternate-reverse;
     }
 }
 
@@ -159,17 +156,11 @@ body {
 }
 
 @keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
+    0% { background-position: 0 0; }
 
-    50% {
-        background-position: 400% 0;
-    }
+    50% { background-position: 400% 0; }
 
-    100% {
-        background-position: 0 0;
-    }
+    100% { background-position: 0 0; }
 }
 
 /*#endregion*/
@@ -179,12 +170,12 @@ body {
 
 #player-button {
     float: left;
-    margin-left: 4em;
+    margin-left: 9em;
 }
 
 #about-button {
     float: right;
-    margin-right: 4em;
+    margin-right: 9em;
 }
 
 /* tailwind button */
@@ -194,7 +185,7 @@ body {
     border: 1px solid transparent;
     border-radius: .75rem;
     box-sizing: border-box;
-    color: #8D4BE0;
+    color: $main-font-color;
     cursor: pointer;
     font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     font-size: 1.4rem;

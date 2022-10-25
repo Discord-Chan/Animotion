@@ -17,13 +17,13 @@ export default function Home() {
           type="button"
           onClick={() => {
             SelectModel(
-              "https://cdn.glitch.me/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/amoguswithoddballs.vrm?v=1666720660087"
+              "https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/yorforger.vrm?v=1666725192965"
             );
           }}
         >
           <img
             className="vrm-image"
-            src="/images/vrms/amongus_oddballs.png"
+            src="/images/vrms/yor.jpg"
             alt="virtual model black haired boy with glasses"
           />
         </button>
@@ -33,13 +33,13 @@ export default function Home() {
           type="button"
           onClick={() => {
             SelectModel(
-              "https://cdn.glitch.me/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/rich_girl.vrm?v=1663588646001"
+              "https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/felix.vrm?v=1666724550269" 
             );
           }}
         >
           <img
             className="vrm-image"
-            src="/images/vrms/test-blackbackground.jpg"
+            src="/images/vrms/vampire.jpg"
             alt="virtual model black haired boy with glasses"
           />
         </button>
@@ -49,13 +49,13 @@ export default function Home() {
           type="button"
           onClick={() => {
             SelectModel(
-              "https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/uwugirl.vrm?v=1652337472157"
+              "https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/girl_rainbow.vrm?v=1666725244245"
             );
           }}
         >
           <img
             className="vrm-image"
-            src="/images/vrms/test-blackbackground.jpg"
+            src="/images/vrms/lgbtq_girl.jpg"
             alt="virtual model black haired boy with glasses"
           />
         </button>
