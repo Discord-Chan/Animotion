@@ -10,7 +10,7 @@ function GoTo(link) {
 export default function Home() {
   return (
     <>
-      <p id="logo">Animotion</p>
+      <p id="logo" className="glitch" data-text="Animotion">Animotion</p>
       <div className="vrm-container">
         <button
           className="vrm-selector glow-on-hover"
