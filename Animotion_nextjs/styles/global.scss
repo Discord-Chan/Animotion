@@ -2,6 +2,7 @@
 
 body {
     background-image: url('../public/images/backgrounds/mostly_black1.jpg');
+    // background-image: url('../public/images/backgrounds/neon.jpg');
     -moz-background-size: cover;
     background-size: cover;
 
@@ -13,12 +14,23 @@ body {
     src: url('../public/fonts/FastMotion.ttf');
 }
 
-#main-headline {
+#logo {
     font-family: FastMotion;
     font-size: 7em;
     color: #8D4BE0;
     text-align: center;
+
+    // TODO
+    // looks good in chrome but not in firefox
+    margin-top: 0.75em;
+}
+
+#main-headline {
+    font-size: 7em;
+    color: white;
+    text-align: center;
     margin-top: 0.5em;
+    color: #8D4BE0;
 }
 
 /*#endregion*/
@@ -41,7 +53,7 @@ body {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    margin: 100px;
+    margin: 5em;
 }
 
 /*#endregion*/
