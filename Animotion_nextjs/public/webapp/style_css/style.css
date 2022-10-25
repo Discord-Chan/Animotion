@@ -51,7 +51,13 @@ a:link:hover {
   font-size: 16px;
   color: #222;
   padding: 8px;
+  display: block;
 }
+.button_size{
+  width: 180px;
+  height: 40px;
+}
+
 /*screen */
 .screen {
   display: flex;
@@ -151,39 +157,31 @@ a.selector {
   background: #13a3f3;
 }
 
-.arrow {
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-}
 
-.left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-}
-
-.button2 {
+.button1 {
   border-radius: 10px;
-  background-color: #8d4be0;
+  background-color: #8D4BE0;
   border: none;
   color: white;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   transition-duration: 0.4s;
   cursor: pointer;
 }
 
-.button1 {
-  background-color: #8d4be0;
-  color: white;
-  border: 2px solid #8d4be0;
+.button_inline{
+  display: inline-block;
 }
 
+.button_vertically{
+  display: block;
+  margin-bottom: 10px;
+}
+
+
 .button1:hover {
-  background-color: #ffffff20;
+  background-color: #D875FF;
   color: white;
 }
 

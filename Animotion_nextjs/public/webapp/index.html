@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>AniMotion</title>
-
+  
     <script src="lib_scripts/three.js"></script>
     <script src="lib_scripts/GLTFLoader.js"></script>
     <script src="lib_scripts/OrbitControls.js"></script>
     <script src="lib_scripts/three-vrm.js"></script>
+    <script src="scripts/options.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.5.1635989137/holistic.js"
       crossorigin="anonymous"
@@ -24,33 +25,26 @@
     <script src="https://cdn.jsdelivr.net/npm/kalidokit@1.1/dist/kalidokit.umd.js"></script>
     <link rel="stylesheet" href="style_css/style.css" />
     <link rel="stylesheet" href="style_css/screen_style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
   </head>
   <body style="background-image: url(assets/animotion_pattern2.jpg)">
+
     <div class="return_button">
-      <a class="button2 button1" href="/"
-        ><p><i class="arrow left"></i> back to menu</p></a
-      >
+      <button style="background-color: rgba(51, 170, 51, 0)" onclick="get_vision()" class="button1 button_vertically button_size"><p> <i class="	glyphicon glyphicon-off"></i> toggle windows</p></button>
+      <button id="return_vision" onclick="window.location.href = '/';"class="button1 button_vertically button_size" href="/"><p><i class="glyphicon glyphicon-arrow-left"></i> back to menu</p></button>
     </div>
-    <div style="background-color: rgba(51, 170, 51, 0)" class="screen">
-      <!---<div id="options">
-        <span class="option make_white">webm video</span>
-        <label class="switch">
-          <input id="convert-to-gif" type="checkbox" />
-          <span class="slider round"></span>
-        </label>
-        <span class="option make_white">gif (Chrome only)</span>
-      </div>-->
+    <div id="record_vision" style="background-color: rgba(51, 170, 51, 0)" class="screen">
       <video controls autoplay playsinline></video>
 
       <div id="controls">
-        <button class="button1 button2" id="btn-start-recording">
+        <button class="button1 button_inline" id="btn-start-recording">
           Start Recording
         </button>
-        <button class="button1 button2" id="btn-stop-recording" disabled>
+        <button class="button1 button_inline" id="btn-stop-recording" disabled>
           Stop Recording
         </button>
         <p id="message" />
-        <!--- <script src="scripts/screen_record.js"></script> -->
         <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
         <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.9.5/dist/ffmpeg.min.js"></script>
         <script>
@@ -125,8 +119,6 @@
 
           function captureCallback(target) {
             video.srcObject = target;
-            //const checkbox = document.getElementById("convert-to-gif");
-            //checkbox.disabled = true;
 
             var recorder = RecordRTC(target, {
               type: "video",
@@ -145,14 +137,7 @@
                 video.src = fileUrl;
 
                 target.stop();
-                /*if (checkbox.checked === true) {
-                  convert(fileUrl).then(() => {
-                    checkbox.disabled = false;
-                  });
-                } else {
-                  recorder.save("screen_recording.webm");
-                  checkbox.disabled = false;
-                }*/
+
                 recorder.save("screen_recording.webm");
                 recorder.destroy();
                 recorder = null;
@@ -255,7 +240,7 @@
         </script>
       </div>
     </div>
-    <div class="preview">
+    <div id="preview_vision" class="preview">
       <video
         class="input_video video_transformer"
         width="1920px"
