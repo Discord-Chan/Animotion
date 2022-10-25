@@ -10,7 +10,7 @@ function GoTo(link) {
 export default function Home() {
   return (
     <>
-      <p id="main-headline">Animotion</p>
+      <p id="logo">Animotion</p>
       <div className="vrm-container">
         <button
           className="vrm-selector glow-on-hover"
@@ -23,7 +23,7 @@ export default function Home() {
         >
           <img
             className="vrm-image"
-            src="/images/vrms/test-nobackground.png"
+            src="/images/vrms/test-blackbackground.jpg"
             alt="virtual model black haired boy with glasses"
           />
         </button>
@@ -39,7 +39,7 @@ export default function Home() {
         >
           <img
             className="vrm-image"
-            src="/images/vrms/test-nobackground.png"
+            src="/images/vrms/test-blackbackground.jpg"
             alt="virtual model black haired boy with glasses"
           />
         </button>
@@ -53,7 +53,7 @@ export default function Home() {
         >
           <img
             className="vrm-image"
-            src="/images/vrms/test-nobackground.png"
+            src="/images/vrms/test-blackbackground.jpg"
             alt="virtual model black haired boy with glasses"
           />
         </button>
