@@ -3,18 +3,37 @@ export default function Player() {
 		<>
 		<p id="main-headline">Mediaplayer</p>
 		
-		<div id="video-container">
+		<div className="video-container">
 			<div className="dance-container">
-				<img className="dance-image" src="/images/dances/natalie_dance.jpg"></img>
+				<iframe className="youtube-video-iframe" src="https://www.youtube.com/embed/U5cK0gVOz_Q?modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				<p className="dance-name">dance 1</p>
 			</div>
 			<div className="dance-container">
-				<img className="dance-image" src="/images/dances/purple_dress_dance.png"></img>
+			<iframe className="youtube-video-iframe" src="https://www.youtube-nocookie.com/embed/U5cK0gVOz_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 				<p className="dance-name">dance 2</p>
 			</div>
 			<div className="dance-container">
-				<img className="dance-image" src="/images/dances/orange_girl_dance.png"></img>
+			<iframe className="youtube-video-iframe" src="https://www.youtube-nocookie.com/embed/U5cK0gVOz_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				
 				<p className="dance-name">dance 3</p>
+			</div>
+		</div>
+		<div className="video-container">
+			<div className="dance-container">
+			<iframe className="youtube-video-iframe" src="https://www.youtube-nocookie.com/embed/U5cK0gVOz_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				
+				<p className="dance-name">dance 4</p>
+			</div>
+			<div className="dance-container">
+			<iframe className="youtube-video-iframe" src="https://www.youtube-nocookie.com/embed/U5cK0gVOz_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				
+				<p className="dance-name">dance 5</p>
+			</div>
+			<div className="dance-container">
+			<iframe className="youtube-video-iframe" src="https://www.youtube-nocookie.com/embed/U5cK0gVOz_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				
+				<p className="dance-name">dance 6</p>
 			</div>
 		</div>
 		</>
