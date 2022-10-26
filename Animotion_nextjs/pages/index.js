@@ -23,7 +23,7 @@ export default function Home() {
         >
           <img
             className="vrm-image"
-            src="/images/vrms/yor.jpg"
+            src="/images/vrms/yor2_blackbackground.jpg"
             alt="virtual model black haired boy with glasses"
           />
         </button>
@@ -39,7 +39,7 @@ export default function Home() {
         >
           <img
             className="vrm-image"
-            src="/images/vrms/vampire.jpg"
+            src="/images/vrms/vampire_blackbackground.jpg"
             alt="virtual model black haired boy with glasses"
           />
         </button>
@@ -55,7 +55,7 @@ export default function Home() {
         >
           <img
             className="vrm-image"
-            src="/images/vrms/lgbtq_girl.jpg"
+            src="/images/vrms/lgtbq_girl_blackbackground.jpg"
             alt="virtual model black haired boy with glasses"
           />
         </button>
