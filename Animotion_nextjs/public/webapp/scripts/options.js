@@ -21,4 +21,10 @@ function get_vision() {
         document.getElementById("preview_vision").style.display = "none";
     }
 
+    if (document.getElementById("control_vision").style.display == "none") {
+      document.getElementById("control_vision").style.display = "block";
+    } else {
+      document.getElementById("control_vision").style.display = "none";
+    }
+
   }
