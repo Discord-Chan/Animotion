@@ -4,23 +4,26 @@ export default function Player() {
 		<p id="main-headline">Mediaplayer</p>
 		
 		<div className="video-container">
-			<div className="dance-container">
-				<iframe className="youtube-video-iframe" src="https://www.youtube.com/embed/U5cK0gVOz_Q?modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<p className="dance-name">dance 1</p>
-			</div>
-			<div className="dance-container">
-			<iframe className="youtube-video-iframe" src="https://www.youtube-nocookie.com/embed/U5cK0gVOz_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-				<p className="dance-name">dance 2</p>
-			</div>
-			<div className="dance-container">
-			<iframe className="youtube-video-iframe" src="https://www.youtube-nocookie.com/embed/U5cK0gVOz_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			
 				
-				<p className="dance-name">dance 3</p>
+			<div className="dance-container">
+				<iframe className="youtube-video-iframe" src="https://www.youtube.com/embed/O36YAImtk4E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p className="dance-name">The Feels - Animotion</p>
+			</div>
+			<div className="dance-container">
+			<iframe className="youtube-video-iframe" src="https://www.youtube.com/embed/muWjGi8tvX4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+				<p className="dance-name">Feel Special - Animotion</p>
+			</div>
+			<div className="dance-container">
+			<iframe className="youtube-video-iframe" src="https://www.youtube.com/embed/7W-4_qw41Ek" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				
+				<p className="dance-name">Devil - Animotion</p>
 			</div>
 		</div>
 		<div className="video-container">
-			<div className="dance-container">
+			{/*
+		 <div className="dance-container">
 			<iframe className="youtube-video-iframe" src="https://www.youtube-nocookie.com/embed/U5cK0gVOz_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				
 				<p className="dance-name">dance 4</p>
@@ -35,6 +38,7 @@ export default function Player() {
 				
 				<p className="dance-name">dance 6</p>
 			</div>
+	*/}
 		</div>
 		</>
 	)
