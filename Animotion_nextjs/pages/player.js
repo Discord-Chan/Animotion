@@ -1,11 +1,9 @@
 export default function Player() {
 	return (
 		<>
-		<p id="main-headline">Mediaplayer</p>
+		<h1 id="main-headline" className="glitch" data-text="Mediaplayer">Mediaplayer</h1>
 		
 		<div className="video-container">
-			
-				
 			<div className="dance-container">
 				<iframe className="youtube-video-iframe" src="https://www.youtube.com/embed/O36YAImtk4E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				<p className="dance-name">The Feels - Animotion</p>

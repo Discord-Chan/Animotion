@@ -1,0 +1,26 @@
+.default_text {
+    text-align: center;
+    color: white;
+}
+
+.text {
+    @extend .default_text;
+    font-size: 1.8em;
+    margin: .5em;
+}
+
+.legal_notice_text {
+    @extend .default_text;
+    font-size: 1.25em;
+    margin: .25em;
+}
+
+.small_legal_text {
+    @extend .default_text;
+    font-size: 1em;
+    margin: .1em;
+}
+
+.legalnoticeheadline {
+    margin-top: 2em;
+}

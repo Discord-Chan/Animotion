@@ -82,6 +82,15 @@ export default function Home() {
         >
           Among us
         </button>
+        <button
+          className="link-button"
+          role="button"
+          onClick={() => {
+            GoTo("community");
+          }}
+        >
+          Community
+        </button>
       </div>
     </>
   );
