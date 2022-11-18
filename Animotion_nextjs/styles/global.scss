@@ -197,19 +197,26 @@ p {
 
 /*#region buttons*/
 
+.link-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-left: 7em;
+    margin-right: 7em;
+}
+
 #player-button {
     float: left;
-    margin-left: 9em;
 }
 
 #about-button {
     float: right;
-    margin-right: 9em;
 }
 
 /* tailwind button */
 .link-button {
-    margin-bottom: 2em;
+    margin-left: 7em;
+    margin-right: 7em;
     background-color: $main-font-color;
     border: 1px solid transparent;
     border-radius: .75rem;
