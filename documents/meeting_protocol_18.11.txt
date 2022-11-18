@@ -1,0 +1,25 @@
+Noch Unterkaptitel hinzufügen (2. Ebene)
+
+strukurierung is ok bis auf 
+	notwendig: basically eigenes kapitel related research (aktueller stand der technik, andere lösungen, forschungsgruppen, produkte, white pappers) !
+
+wer schreibt was / wer ist für was zuständig
+
+schätzung auf umfang pro hauptkapitel (seitenanzahl)
+
+
+testkaptitel nicht extrem wichtig
+
+
+ersten 10 seiten bis mitte dezember
+
+
+englisch wird empfohlen, weil fachjargon ist auf englisch und wäre gefahr, dass bei bei deutsch dann vermischung / denglisch entsteht
+
+was für metrics werden für perfomance / UI -> selbe parameter, bei umfrage wäre größere strichprobe als 10 klassenmitglieder notwendig aber durchaus möglich
+
+2 verschiedene gitrepos (latech repo noch erstellen und sonniboy hinzufügen)
+
+
+Neuer Termin: 25.11
+Ersten 10 Seiten: 16.12
