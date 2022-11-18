@@ -10,7 +10,9 @@ function GoTo(link) {
 export default function Home() {
   return (
     <>
-      <p id="logo" className="glitch" data-text="Animotion">Animotion</p>
+      <p id="logo" className="glitch" data-text="Animotion">
+        Animotion
+      </p>
       <div className="vrm-container">
         <button
           className="vrm-selector glow-on-hover"
@@ -33,7 +35,7 @@ export default function Home() {
           type="button"
           onClick={() => {
             SelectModel(
-              "https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/felix.vrm?v=1666724550269" 
+              "https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/felix.vrm?v=1666724550269"
             );
           }}
         >

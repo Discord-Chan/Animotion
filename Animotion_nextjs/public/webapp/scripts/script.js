@@ -1,18 +1,23 @@
-//Import Helper Functions from Kalidokit
+/*
+
+ANIMOTION - Romeo Bhuiyan, Chrsitoph Lasinger
+
+*/
+
+//Importing libraries
 const remap = Kalidokit.Utils.remap;
 const clamp = Kalidokit.Utils.clamp;
 const lerp = Kalidokit.Vector.lerp;
 
-/* THREEJS WORLD SETUP */
 let currentVrm;
 
-// renderer
+// render with WebGLRenderer
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 document.body.appendChild(renderer.domElement);
 
-// camera
+// set up the camera (the size of the window needs to be revised) due to the size of the screen and quality of the camera
 const orbitCamera = new THREE.PerspectiveCamera(
   35,
   window.innerWidth / window.innerHeight,
@@ -21,49 +26,48 @@ const orbitCamera = new THREE.PerspectiveCamera(
 );
 orbitCamera.position.set(0.0, 1.4, 0.7);
 
-// controls
+// control the model with the camera
 const orbitControls = new THREE.OrbitControls(orbitCamera, renderer.domElement);
 orbitControls.screenSpacePanning = true;
 orbitControls.target.set(0.0, 1.4, 0.0);
 orbitControls.update();
 
-// scene
+// setting up the scene with three.js
 const scene = new THREE.Scene();
 
-// light
+// lighting for the model on canvas
 const light = new THREE.DirectionalLight(0xffffff);
 light.position.set(1.0, 1.0, 1.0).normalize();
 scene.add(light);
 
-// Main Render Loop
+// Looping the process
 const clock = new THREE.Clock();
 
+//adding physics to the model
 function animate() {
   requestAnimationFrame(animate);
 
   if (currentVrm) {
-    // Update model to render physics
     currentVrm.update(clock.getDelta());
   }
   renderer.render(scene, orbitCamera);
 }
 animate();
 
-/* VRM CHARACTER SETUP */
-
-// Import Character VRM
+// VRM Loader
 const loader = new THREE.GLTFLoader();
 loader.crossOrigin = "anonymous";
-// Import model from URL, add your own model here
+// importing model from glitch.io our repo for storing the models
 loader.load(
   window.localStorage.getItem("vrm"),
   (gltf) => {
     THREE.VRMUtils.removeUnnecessaryJoints(gltf.scene);
 
+    // set the model infornt of user
     THREE.VRM.from(gltf).then((vrm) => {
       scene.add(vrm.scene);
       currentVrm = vrm;
-      currentVrm.scene.rotation.y = Math.PI; // Rotate model 180deg to face camera
+      currentVrm.scene.rotation.y = Math.PI;
     });
   },
 
@@ -77,7 +81,7 @@ loader.load(
   (error) => console.error(error)
 );
 
-// Animate Rotation Helper function
+// rotate the model on canvas
 const rigRotation = (
   name,
   rotation = { x: 0, y: 0, z: 0 },
@@ -100,10 +104,10 @@ const rigRotation = (
     rotation.z * dampener
   );
   let quaternion = new THREE.Quaternion().setFromEuler(euler);
-  Part.quaternion.slerp(quaternion, lerpAmount); // interpolate
+  Part.quaternion.slerp(quaternion, lerpAmount);
 };
 
-// Animate Position Helper Function
+// position of the model
 const rigPosition = (
   name,
   position = { x: 0, y: 0, z: 0 },
@@ -124,7 +128,7 @@ const rigPosition = (
     position.y * dampener,
     position.z * dampener
   );
-  Part.position.lerp(vector, lerpAmount); // interpolate
+  Part.position.lerp(vector, lerpAmount);
 };
 
 let oldLookTarget = new THREE.Euler();
@@ -134,12 +138,10 @@ const rigFace = (riggedFace) => {
   }
   rigRotation("Neck", riggedFace.head, 0.7);
 
-  // Blendshapes and Preset Name Schema
   const Blendshape = currentVrm.blendShapeProxy;
   const PresetName = THREE.VRMSchema.BlendShapePresetName;
 
-  // Simple example without winking. Interpolate based on old blendshape, then stabilize blink with `Kalidokit` helper function.
-  // for VRM, 1 is closed, 0 is open.
+  // VRM Test for the eyes (considering blinking)
   riggedFace.eye.l = lerp(
     clamp(1 - riggedFace.eye.l, 0, 1),
     Blendshape.getValue(PresetName.Blink),
@@ -156,7 +158,7 @@ const rigFace = (riggedFace) => {
   );
   Blendshape.setValue(PresetName.Blink, riggedFace.eye.l);
 
-  // Interpolate and set mouth blendshapes
+  // Mouth motion
   Blendshape.setValue(
     PresetName.I,
     lerp(riggedFace.mouth.shape.I, Blendshape.getValue(PresetName.I), 0.5)
@@ -178,8 +180,7 @@ const rigFace = (riggedFace) => {
     lerp(riggedFace.mouth.shape.U, Blendshape.getValue(PresetName.U), 0.5)
   );
 
-  //PUPILS
-  //interpolate pupil and keep a copy of the value
+  //Pupils and Eye Rotation
   let lookTarget = new THREE.Euler(
     lerp(oldLookTarget.x, riggedFace.pupil.y, 0.4),
     lerp(oldLookTarget.y, riggedFace.pupil.x, 0.4),
@@ -190,24 +191,21 @@ const rigFace = (riggedFace) => {
   currentVrm.lookAt.applyer.lookAt(lookTarget);
 };
 
-/* VRM Character Animator */
+// VRM Character Animation Loop
 const animateVRM = (vrm, results) => {
   if (!vrm) {
     return;
   }
-  // Take the results from `Holistic` and animate character based on its Face, Pose, and Hand Keypoints.
+  //Holistic lib returns a lot of data, we only need a few of them
   let riggedPose, riggedLeftHand, riggedRightHand, riggedFace;
 
   const faceLandmarks = results.faceLandmarks;
-  // Pose 3D Landmarks are with respect to Hip distance in meters
   const pose3DLandmarks = results.ea;
-  // Pose 2D landmarks are with respect to videoWidth and videoHeight
   const pose2DLandmarks = results.poseLandmarks;
-  // Be careful, hand landmarks may be reversed
   const leftHandLandmarks = results.rightHandLandmarks;
   const rightHandLandmarks = results.leftHandLandmarks;
 
-  // Animate Face
+  // Animate Face and Pupils
   if (faceLandmarks) {
     riggedFace = Kalidokit.Face.solve(faceLandmarks, {
       runtime: "mediapipe",
@@ -216,7 +214,7 @@ const animateVRM = (vrm, results) => {
     rigFace(riggedFace);
   }
 
-  // Animate Pose
+  // animate the rest of the body (mirrored)
   if (pose2DLandmarks && pose3DLandmarks) {
     riggedPose = Kalidokit.Pose.solve(pose3DLandmarks, pose2DLandmarks, {
       runtime: "mediapipe",
@@ -226,9 +224,9 @@ const animateVRM = (vrm, results) => {
     rigPosition(
       "Hips",
       {
-        x: -riggedPose.Hips.position.x, // Reverse direction
-        y: riggedPose.Hips.position.y + 1, // Add a bit of height
-        z: -riggedPose.Hips.position.z, // Reverse direction
+        x: -riggedPose.Hips.position.x,
+        y: riggedPose.Hips.position.y + 1,
+        z: -riggedPose.Hips.position.z,
       },
       1,
       0.07
@@ -248,11 +246,10 @@ const animateVRM = (vrm, results) => {
     rigRotation("RightLowerLeg", riggedPose.RightLowerLeg, 1, 0.3);
   }
 
-  // Animate Hands
+  // Animate Hands (left)
   if (leftHandLandmarks) {
     riggedLeftHand = Kalidokit.Hand.solve(leftHandLandmarks, "Left");
     rigRotation("LeftHand", {
-      // Combine pose rotation Z and hand rotation X Y
       z: riggedPose.LeftHand.z,
       y: riggedLeftHand.LeftWrist.y,
       x: riggedLeftHand.LeftWrist.x,
@@ -279,10 +276,11 @@ const animateVRM = (vrm, results) => {
     );
     rigRotation("LeftLittleDistal", riggedLeftHand.LeftLittleDistal);
   }
+
+  // Animate Hands (right)
   if (rightHandLandmarks) {
     riggedRightHand = Kalidokit.Hand.solve(rightHandLandmarks, "Right");
     rigRotation("RightHand", {
-      // Combine Z axis from pose hand and X/Y axis from hand wrist rotation
       z: riggedPose.RightHand.z,
       y: riggedRightHand.RightWrist.y,
       x: riggedRightHand.RightWrist.x,
@@ -317,14 +315,14 @@ const animateVRM = (vrm, results) => {
   }
 };
 
-/* SETUP MEDIAPIPE HOLISTIC INSTANCE */
+// holistic lib
 let videoElement = document.querySelector(".input_video"),
   guideCanvas = document.querySelector("canvas.guides");
 
 const onResults = (results) => {
-  // Draw landmark guides
+  // Draw face marks
   drawResults(results);
-  // Animate model
+  // animate the model
   animateVRM(currentVrm, results);
 };
 
@@ -341,16 +339,15 @@ holistic.setOptions({
   minTrackingConfidence: 0.7,
   refineFaceLandmarks: true,
 });
-// Pass holistic a callback function
 holistic.onResults(onResults);
 
+// drawing the face marks on the canvas
 const drawResults = (results) => {
   guideCanvas.width = videoElement.videoWidth;
   guideCanvas.height = videoElement.videoHeight;
   let canvasCtx = guideCanvas.getContext("2d");
   canvasCtx.save();
   canvasCtx.clearRect(0, 0, guideCanvas.width, guideCanvas.height);
-  // Use `Mediapipe` drawing functions
   drawConnectors(canvasCtx, results.poseLandmarks, POSE_CONNECTIONS, {
     color: "#00cff7",
     lineWidth: 4,
@@ -364,7 +361,6 @@ const drawResults = (results) => {
     lineWidth: 1,
   });
   if (results.faceLandmarks && results.faceLandmarks.length === 478) {
-    //draw pupils
     drawLandmarks(
       canvasCtx,
       [results.faceLandmarks[468], results.faceLandmarks[468 + 5]],
@@ -392,7 +388,6 @@ const drawResults = (results) => {
   });
 };
 
-// Use `Mediapipe` utils to get camera - lower resolution = higher fps
 const camera = new Camera(videoElement, {
   onFrame: async () => {
     await holistic.send({ image: videoElement });

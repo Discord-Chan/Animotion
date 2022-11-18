@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <title>AniMotion</title>
-  
+
+    <!--Importing all libs-->
     <script src="lib_scripts/three.js"></script>
     <script src="lib_scripts/GLTFLoader.js"></script>
     <script src="lib_scripts/OrbitControls.js"></script>
@@ -25,24 +26,101 @@
     <script src="https://cdn.jsdelivr.net/npm/kalidokit@1.1/dist/kalidokit.umd.js"></script>
     <link rel="stylesheet" href="style_css/style.css" />
     <link rel="stylesheet" href="style_css/screen_style.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
   </head>
   <body style="background-image: url(assets/animotion_pattern2.jpg)">
-
+    <!--Button to return to the main menu-->
     <div class="return_button">
-      <button style="background-color: rgba(51, 170, 51, 0)" onclick="get_vision()" class="button1 button_vertically button_size"><p> <i class="	glyphicon glyphicon-off"></i> toggle windows</p></button>
-      <button id="return_vision" onclick="window.location.href = '/';"class="button1 button_vertically button_size" href="/"><p><i class="glyphicon glyphicon-arrow-left"></i> back to menu</p></button>
+      <button
+        style="background-color: rgba(51, 170, 51, 0)"
+        onclick="get_vision()"
+        class="button1 button_vertically button_size"
+      >
+        <!--Button to toggle the windows if you want to record your screen or use it on streaming platforms-->
+        <p><i class="glyphicon glyphicon-off"></i> toggle windows</p>
+      </button>
+      <button
+        id="return_vision"
+        onclick="window.location.href = '/';"
+        class="button1 button_vertically button_size"
+        href="/"
+      >
+        <p><i class="glyphicon glyphicon-arrow-left"></i> back to menu</p>
+      </button>
     </div>
 
+    <!--How to control the models (mouse controls)-->
     <div id="control_vision" class="controls_mouse">
-      <p class="control_view"><svg width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M4 10V14C4 18.4183 7.58172 22 12 22C16.4183 22 20 18.4183 20 14V9C20 5.13401 16.866 2 13 2H12C7.58172 2 4 5.58172 4 10Z" stroke="currentColor" stroke-linecap="round"/> <path d="M12 2V8.4C12 8.73137 12.2686 9 12.6 9H20" stroke="currentColor" stroke-linecap="round"/></svg> Hold right click to move the model</p>
-      <p class="control_view"><svg width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20 10V14C20 18.4183 16.4183 22 12 22C7.58172 22 4 18.4183 4 14V9C4 5.13401 7.13401 2 11 2H12C16.4183 2 20 5.58172 20 10Z" stroke="currentColor" stroke-linecap="round"/> <path d="M12 2V8.4C12 8.73137 11.7314 9 11.4 9H4" stroke="currentColor" stroke-linecap="round"/> </svg> Hold left click to rotate the model</p>
-      <p class="control_view"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-mouse" viewBox="0 0 16 16"> <path d="M8 3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 3zm4 8a4 4 0 0 1-8 0V5a4 4 0 1 1 8 0v6zM8 0a5 5 0 0 0-5 5v6a5 5 0 0 0 10 0V5a5 5 0 0 0-5-5z"/> </svg> Mouse scroll to zoom in and out</p>
-    
+      <p class="control_view">
+        <svg
+          width="24"
+          height="24"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 10V14C4 18.4183 7.58172 22 12 22C16.4183 22 20 18.4183 20 14V9C20 5.13401 16.866 2 13 2H12C7.58172 2 4 5.58172 4 10Z"
+            stroke="currentColor"
+            stroke-linecap="round"
+          />
+          <path
+            d="M12 2V8.4C12 8.73137 12.2686 9 12.6 9H20"
+            stroke="currentColor"
+            stroke-linecap="round"
+          />
+        </svg>
+        Hold right click to move the model
+      </p>
+      <p class="control_view">
+        <svg
+          width="24"
+          height="24"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20 10V14C20 18.4183 16.4183 22 12 22C7.58172 22 4 18.4183 4 14V9C4 5.13401 7.13401 2 11 2H12C16.4183 2 20 5.58172 20 10Z"
+            stroke="currentColor"
+            stroke-linecap="round"
+          />
+          <path
+            d="M12 2V8.4C12 8.73137 11.7314 9 11.4 9H4"
+            stroke="currentColor"
+            stroke-linecap="round"
+          />
+        </svg>
+        Hold left click to rotate the model
+      </p>
+      <p class="control_view">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="26"
+          fill="currentColor"
+          class="bi bi-mouse"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 3zm4 8a4 4 0 0 1-8 0V5a4 4 0 1 1 8 0v6zM8 0a5 5 0 0 0-5 5v6a5 5 0 0 0 10 0V5a5 5 0 0 0-5-5z"
+          />
+        </svg>
+        Mouse scroll to zoom in and out
+      </p>
     </div>
 
-    <div id="record_vision" style="background-color: rgba(51, 170, 51, 0)" class="screen">
+    <!--Record the screen while using the model-->
+    <div
+      id="record_vision"
+      style="background-color: rgba(51, 170, 51, 0)"
+      class="screen"
+    >
       <video controls autoplay playsinline></video>
 
       <div id="controls">
@@ -53,8 +131,10 @@
           Stop Recording
         </button>
         <p id="message" />
+        <!--Importing libraries-->
         <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
         <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.9.5/dist/ffmpeg.min.js"></script>
+        <!--Embeded Javascript to record the screen-->
         <script>
           const video = document.querySelector("video");
           const message = document.getElementById("message");
@@ -71,6 +151,7 @@
             var error = "Your browser does NOT supports getDisplayMedia API.";
             document.querySelector("h1").innerHTML = error;
 
+            // Buttons to start and stop the recording process
             video.style.display = "none";
             document.getElementById("btn-start-recording").style.display =
               "none";
@@ -79,6 +160,7 @@
             throw new Error(error);
           }
 
+          //Recommended to record the entire screen in F11
           function invokeGetDisplayMedia(success, error) {
             var displaymediastreamconstraints = {
               video: {
@@ -118,8 +200,7 @@
               function (error) {
                 console.error(error);
                 alert(
-                  "Unable to capture your screen. Please check console logs.\n" +
-                    error
+                  "Error. Check console logs for more information.\n" + error
                 );
               }
             );
@@ -146,13 +227,13 @@
 
                 target.stop();
 
+                //recoreded video is saved as a .webm file
                 recorder.save("screen_recording.webm");
                 recorder.destroy();
                 recorder = null;
               });
             };
           }
-
           function addStreamStopListener(stream, callback) {
             stream.addEventListener(
               "ended",
@@ -190,6 +271,7 @@
             });
           }
 
+          //Button events
           document.getElementById("btn-start-recording").onclick = function () {
             this.disabled = true;
             captureScreen(captureCallback);
@@ -201,6 +283,7 @@
             window.stopCallback();
           };
 
+          // video gets saved in the Download Folder of the user
           function promptDownload(fileURL) {
             var anchorTag = document.createElement("a");
             anchorTag.href = fileURL;
@@ -225,6 +308,8 @@
             }
           }
 
+          //Using ffmpeg to convert the video to gif
+          //Not yet implemented
           const convert = async (sourceFileUrl) => {
             if (!ffmpeg.isLoaded()) {
               message.innerHTML = "Loading ffmpeg-core.js";
@@ -248,6 +333,8 @@
         </script>
       </div>
     </div>
+
+    <!--Camera window with face marks-->
     <div id="preview_vision" class="preview">
       <video
         class="input_video video_transformer"
@@ -259,6 +346,7 @@
       ></video>
       <canvas class="guides"></canvas>
     </div>
+    <!--Loading the Animotion Backend-->
     <script src="scripts/script.js"></script>
   </body>
 </html>
