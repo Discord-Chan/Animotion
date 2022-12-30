@@ -19,7 +19,7 @@ export default function Home() {
           type="button"
           onClick={() => {
             SelectModel(
-              "https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/yorforger.vrm?v=1666725192965"
+              "https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/cyberlady.vrm?v=1671406275496"
             );
           }}
         >
