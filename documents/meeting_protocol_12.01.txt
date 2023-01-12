@@ -1,0 +1,48 @@
+Titelseite mal fürs erste so lassen
+
+"as shown below in figure 2"
+"as shown below in figure 3"
+
+es zählt am ende nur die pdf
+
+paragraphs wichtig?
+
+"Christioph"
+
+an Template halten was die Attributierung der Sektionen geschrieben hat
+
+Mindestanforderungen für Quellenangaben:
+	Author
+	Name der Veröffentlichung
+	Wann veröffentlicht
+	Wie oder Wo veröffentlicht
+
+	Tipp: wir könnten in Latex alles als misc definieren
+
+Video für Projectaward -> AV fragen
+
+Fußnoten machen, wenn Referenzen gemacht werden, die aber keinen Antrag in der Bibliographie wert sind (also nicht so wichtig sind)
+
+Lasinger muss noch zitarieren
+
+kursiver Text ist gute Idee (besser als doppelte Hochkomma), bei erster Verwendung
+
+Überschriften: ganz normale englische Rechtschreibung (erster Buchstabe große, Rest grundsätzlich klein)
+
+in bestimmten Bereichen mehr in die Tiefe gehen (siehe annotiertes PDF)
+
+'better' Begriff vielleicht einfach nicht verwenden, sondern anderen Begriff
+
+Puffer ist durchaus da um den zu verwenden
+
+im Wiki steht 50 Seiten pro Person, also gilt das grundsätzlich auch, vielleicht auch noch mit AV besprechen, wie strikt das ist
+
+50/50 Aufteilung der Attributierung nicht so besonders wichtig
+
+Code snippets (Listing in Latex) können wir verwenden, sollten aber an Umfang sparsam eingesetzt werden (nur relevanter Teil)
+länger als halbe Seite vermeiden
+sollten für den Leser einen Mehrwert haben
+
+Pseudocode kann verwendet werden, muss aber in der ganzen Arbeit einheitlich sein
+
+neues Ziel: 50% der Arbeit = 50 Seiten bis 27.1
