@@ -19,14 +19,14 @@ export default function Home() {
           type="button"
           onClick={() => {
             SelectModel(
-              "https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/cyberlady2_blackbackground.png?v=1673356895538"
+              "https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/cyberlady.vrm?v=1671406275496"
             );
           }}
         >
           <img
             className="vrm-image"
-            src="/images/vrms/yor2_blackbackground.jpg"
-            alt="virtual model black haired boy with glasses"
+            src="https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/cyberlady2_blackbackground.png?v=1673356895538"
+            alt="Cyberlady"
           />
         </button>
 
@@ -42,7 +42,7 @@ export default function Home() {
           <img
             className="vrm-image"
             src="https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/vampire_blackbackground.jpg?v=1672419201319"
-            alt="virtual model black haired boy with glasses"
+            alt="vampireboy"
           />
         </button>
 
@@ -58,7 +58,7 @@ export default function Home() {
           <img
             className="vrm-image"
             src="https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/lgtbq_girl_blackbackground.jpg?v=1672419182513"
-            alt="virtual model black haired boy with glasses"
+            alt="rainbowgirl"
           />
         </button>
       </div>

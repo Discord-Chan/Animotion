@@ -1,310 +1,325 @@
 /*#region actually global*/
 
-$main-font-color:#8D4BE0;
+$main-font-color: #8d4be0;
 
 body {
-    background-image: url('../public/images/backgrounds/anime_background.jpg');
-    -moz-background-size: cover;
-    background-size: cover;
+  background-image: url("../public/images/backgrounds/anime_background.jpg");
+  -moz-background-size: cover;
+  background-size: cover;
 
-    background-color: black;
+  background-color: black;
 }
 
 @font-face {
-    font-family: 'FastMotion';
-    src: url('../public/fonts/FastMotion.ttf');
+  font-family: "FastMotion";
+  src: url("../public/fonts/FastMotion.ttf");
 }
 
 @font-face {
-    font-family: 'Prototype';
-    src: url('../public/fonts/Prototype.ttf');
+  font-family: "Prototype";
+  src: url("../public/fonts/Prototype.ttf");
 }
 
 @mixin glitchCopy {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #main-headline {
-    font-family: Prototype;
-    font-size: 5em;
-    color: white;
-    text-align: center;
-    margin-top: 0.5em;
-    color: $main-font-color;
+  font-family: Prototype;
+  font-size: 5em;
+  color: white;
+  text-align: center;
+  margin-top: 0.5em;
+  color: $main-font-color;
 
-    letter-spacing: 0.1em;
-    animation: glitch-skew 2.5s infinite linear alternate-reverse;
+  letter-spacing: 0.1em;
+  animation: glitch-skew 2.5s infinite linear alternate-reverse;
 
-    &::before {
-        @include glitchCopy;
-        left: 2px;
-        text-shadow: -2px 0 #ff00c1;
-        clip: rect(44px, 450px, 56px, 0);
-        animation: glitch-anim 7s infinite linear alternate-reverse;
-    }
+  &::before {
+    @include glitchCopy;
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 7s infinite linear alternate-reverse;
+  }
 
-    &::after {
-        @include glitchCopy;
-        left: -2px;
-        text-shadow: -2px 0 #ff00c1, 2px 2px #ff00c1;
-        clip: rect(44px, 450px, 56px, 0);
-        animation: glitch-anim2 7s infinite linear alternate-reverse;
-    }
+  &::after {
+    @include glitchCopy;
+    left: -2px;
+    text-shadow: -2px 0 #ff00c1, 2px 2px #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 7s infinite linear alternate-reverse;
+  }
 }
 
 p {
-    font-family: Prototype;
+  font-family: Prototype;
 }
 
 /*#endregion*/
-
 
 /*#region logo */
 
 #logo {
-    font-family: FastMotion;
-    font-size: 7em;
-    color: $main-font-color;
-    text-align: center;
+  font-family: FastMotion;
+  font-size: 7em;
+  color: $main-font-color;
+  text-align: center;
 
-    // TODO
-    // looks good in chrome but not in firefox
-    margin-top: 0.75em;
+  // TODO
+  // looks good in chrome but not in firefox
+  margin-top: 0.75em;
 
-    letter-spacing: 0.1em;
-    animation: glitch-skew 2.5s infinite linear alternate-reverse;
+  letter-spacing: 0.1em;
+  animation: glitch-skew 2.5s infinite linear alternate-reverse;
 
-    &::before {
-        @include glitchCopy;
-        left: 2px;
-        text-shadow: -2px 0 #ff00c1;
-        clip: rect(44px, 450px, 56px, 0);
-        animation: glitch-anim 7s infinite linear alternate-reverse;
-    }
+  &::before {
+    @include glitchCopy;
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 7s infinite linear alternate-reverse;
+  }
 
-    &::after {
-        @include glitchCopy;
-        left: -2px;
-        text-shadow: -2px 0 #ff00c1, 2px 2px #ff00c1;
-        clip: rect(44px, 450px, 56px, 0);
-        animation: glitch-anim2 7s infinite linear alternate-reverse;
-    }
+  &::after {
+    @include glitchCopy;
+    left: -2px;
+    text-shadow: -2px 0 #ff00c1, 2px 2px #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 7s infinite linear alternate-reverse;
+  }
 }
 
 @keyframes glitch-anim {
-    $steps: 20;
-    @for $i from 0 to $steps {
-        #{percentage($i*(1/$steps))} {
-            clip: rect(random(100) + px, 9999px, random(100) + px, 0);
-            transform: skew((random(100) / 100) + deg);
-        }
+  $steps: 20;
+  @for $i from 0 to $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+      transform: skew((random(100) / 100) + deg);
     }
+  }
 }
 
 @keyframes glitch-anim2 {
-    $steps: 20;
-    @for $i from 0 to $steps {
-        #{percentage($i*(1/$steps))} {
-            clip: rect(random(100) + px, 9999px, random(100) + px, 0);
-            transform: skew((random(100) / 100) + deg);
-        }
+  $steps: 20;
+  @for $i from 0 to $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+      transform: skew((random(100) / 100) + deg);
     }
+  }
 }
 
 @keyframes glitch-skew {
-    $steps: 10;
-    @for $i from 0 to $steps {
-        #{percentage($i*(1/$steps))} {
-            transform: skew((random(10) - 5) + deg);
-        }
+  $steps: 10;
+  @for $i from 0 to $steps {
+    #{percentage($i*(1/$steps))} {
+      transform: skew((random(10) - 5) + deg);
     }
+  }
 }
 
 /*#endregion*/
-
 
 /*#region vrm selectors*/
 
 .vrm-selector {
-    margin-left: 125px;
-    margin-right: 125px;
+  margin-left: 125px;
+  margin-right: 125px;
 }
 
 .vrm-image {
-    max-width: 400px;
-    max-height: 500px;
-    border-radius: 8px;
+  max-width: 400px;
+  max-height: 500px;
+  border-radius: 8px;
 }
 
 .vrm-container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    margin: 5em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: 5em;
 }
 
 /*#endregion*/
-
 
 /*#region rgb glow on vrm selectors*/
 
 .glow-on-hover {
-    border: none;
-    outline: none;
-    background: black;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
+  border: none;
+  outline: none;
+  background: black;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
 }
 
 .glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
+  content: "";
+  background: linear-gradient(45deg, #002bff, #7a00ff, #ff00c8);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 10s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
 .glow-on-hover:hover:before {
-    opacity: 1;
+  opacity: 1;
+}
+
+.glow-on-hover:hover.glow-on-hover:after {
+  opacity: 1;
 }
 
 @keyframes glowing {
-    0% { background-position: 0 0; }
+  0% {
+    background-position: 0 0;
+  }
 
-    50% { background-position: 400% 0; }
+  0% {
+    background-position: 200% 0;
+  }
 
-    100% { background-position: 0 0; }
+  50% {
+    background-position: 400% 0;
+  }
+
+  75% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }
 
 /*#endregion*/
-
 
 /*#region buttons*/
 
 .link-container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    margin-left: 7em;
-    margin-right: 7em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-left: 7em;
+  margin-right: 7em;
 }
 
 #player-button {
-    float: left;
+  float: left;
 }
 
 #about-button {
-    float: right;
+  float: right;
 }
 
 /* tailwind button */
 .link-button {
-    margin-left: 7em;
-    margin-right: 7em;
-    background-color: $main-font-color;
-    border: 1px solid transparent;
-    border-radius: .75rem;
-    box-sizing: border-box;
-    color: white;
-    cursor: pointer;
-    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 1.5rem;
-    padding: .75rem 1.2rem;
-    text-align: center;
-    text-decoration: none #6B7280 solid;
-    text-decoration-thickness: auto;
-    transition-duration: .2s;
-    transition-property: background-color,border-color,color,fill,stroke;
-    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: auto;
+  margin-left: 7em;
+  margin-right: 7em;
+  background-color: $main-font-color;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: 0.75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6b7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
 }
 
 .link-button:hover {
-    background-color: #D875FF;
+  background-color: #d875ff;
 }
 
 .link-button:focus {
-    box-shadow: none;
-    outline: 2px solid transparent;
-    outline-offset: 2px;
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 @media (min-width: 768px) {
-    .link-button {
-        padding: .9rem 4rem;
-    }
+  .link-button {
+    padding: 0.9rem 4rem;
+  }
 }
 
 /*#endregion*/
 
-
 /*#region dances*/
 
 .video-container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    margin: 5em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: 5em;
 }
 
 .dance-container {
-    display: inline-block;
-    text-align: center;
-    margin-left: 2.5em;
-    margin-right: 2.5em;
+  display: inline-block;
+  text-align: center;
+  margin-left: 2.5em;
+  margin-right: 2.5em;
 }
 
 .dance-image {
-    max-width: 50em;
-    max-height: 15em;
+  max-width: 50em;
+  max-height: 15em;
 }
 
 .youtube-video-iframe {
-    width: 25em;
-    height: 15em;
+  width: 25em;
+  height: 15em;
 }
 
 .dance-name {
-    color: white;
-    font-size: 1.5em;
+  color: white;
+  font-size: 1.5em;
 }
 
 /*#endregion*/
 
 .discord-iframe {
-    width: 60em;
-    height: 37em;
-    align-self: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 4em;
+  width: 60em;
+  height: 37em;
+  align-self: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4em;
 }
 
 .community-text {
-    text-align: center;
-    color: white;
-    font-size: 2em;
-    margin: .5em;
+  text-align: center;
+  color: white;
+  font-size: 2em;
+  margin: 0.5em;
 }
