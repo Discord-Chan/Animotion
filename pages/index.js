@@ -1,11 +1,4 @@
-function SelectModel(model) {
-  window.localStorage.setItem("vrm", model);
-  GoTo("webapp/index.html");
-}
-
-function GoTo(link) {
-  window.location.href = link;
-}
+import { GoTo, SelectModel } from './pages_scripts'
 
 export default function Home() {
   return (

@@ -1,6 +1,5 @@
 import styles from '../styles/About.module.scss'
-
-const concat = (...classNames) => classNames.join(' ');
+import { GoTo, concat } from './pages_scripts.js'
 
 export default function About() {
 	return (
@@ -24,6 +23,11 @@ export default function About() {
     <br />
     <p className={styles.legal_notice_text}>animotion@gmail.com</p>
     <p className={styles.legal_notice_text}>+43 650 4423259</p>
+    <button onClick={() => {
+            GoTo("/");
+          }}>
+      <p>back to menu</p>
+    </button>
     </>
   )
 }
