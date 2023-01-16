@@ -1,6 +1,13 @@
+import { GoTo } from './pages_scripts.js';
+
 export default function About() {
 	return (
   	<>
+    <button className="back-button" onClick={() => {
+            GoTo("/");
+          }}>
+      <p>back to menu</p>
+    </button>
     <h1 id="main-headline" className="glitch" data-text="Community">Community</h1>
     <p className="community-text">
         Welcome to the community of Animotion! <br />

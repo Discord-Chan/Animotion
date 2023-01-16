@@ -129,13 +129,13 @@ p {
 /*#region vrm selectors*/
 
 .vrm-selector {
-  margin-left: 125px;
-  margin-right: 125px;
+  margin-left: 7.8em;
+  margin-right: 7.8em;
 }
 
 .vrm-image {
-  max-width: 400px;
-  max-height: 500px;
+  max-width: 25em;
+  max-height: 37em;
   border-radius: 8px;
 }
 
@@ -215,8 +215,9 @@ p {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  margin-left: 7em;
-  margin-right: 7em;
+  margin-left: 3em;
+  margin-right: 3em;
+  // margin-bottom: 2em;
 }
 
 #player-button {
@@ -229,8 +230,10 @@ p {
 
 /* tailwind button */
 .link-button {
-  margin-left: 7em;
-  margin-right: 7em;
+  height: 2.5em;
+  width: 30em;
+  margin-left: 5em;
+  margin-right: 5em;
   background-color: $main-font-color;
   border: 1px solid transparent;
   border-radius: 0.75rem;
@@ -253,17 +256,21 @@ p {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: auto;
 }
 
-.link-button:hover {
+.back-button {
+  display: flex;
+  position: absolute;
+  margin-left: 15em;
+  margin-top: 2em;
+  border-radius: 10px;
+  background-color: $main-font-color;
+  color: white;
+  z-index: 999;
+}
+
+.link-button:hover, .back-button:hover {
   background-color: #d875ff;
-}
-
-.link-button:focus {
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
 }
 
 @media (min-width: 768px) {
