@@ -3,11 +3,9 @@ import { GoTo } from './pages_scripts.js';
 export default function Player() {
 	return (
 		<>
-		<button className="back-button" onClick={() => {
-            GoTo("/");
-          }}>
-      	  <p>back to menu</p>
-    	</button>
+		<button className="back-button" onClick={() => { GoTo("/"); }}>
+      <p>back to menu</p>
+    </button>
 		<h1 id="main-headline" className="glitch" data-text="Mediaplayer">Mediaplayer</h1>
 		
 		<div className="video-container">

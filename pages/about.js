@@ -4,9 +4,7 @@ import { GoTo, concat } from './pages_scripts.js';
 export default function About() {
 	return (
   	<>
-    <button className="back-button" onClick={() => {
-            GoTo("/");
-          }}>
+    <button className="back-button" onClick={() => { GoTo("/"); }}>
       <p>back to menu</p>
     </button>
     <h1 id="main-headline" className="glitch" data-text="About us">About us</h1>
