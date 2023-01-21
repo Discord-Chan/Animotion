@@ -13,7 +13,7 @@ export default function About() {
         You can also upload your own music and dance videos. <br />
         If you need help our 24/7 support is always here for you.
     </p>
-    <iframe className="discord-iframe" src="https://discord.com/widget?id=1035647726634934382&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    <iframe className="discord-iframe" src="https://discord.com/widget?id=1035647726634934382&theme=dark" allowtransparency="true" frameBorder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
     </>
   )
 }

@@ -75,7 +75,7 @@ export default function Home() {
             GoTo("about");
           }}
         >
-          Among us
+          About us
         </button>
         <button
           className="link-button"

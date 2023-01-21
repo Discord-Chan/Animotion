@@ -231,7 +231,7 @@ p {
 /* tailwind button */
 .link-button {
   height: 2.5em;
-  width: 30em;
+  width: 15em;
   margin-left: 5em;
   margin-right: 5em;
   background-color: $main-font-color;
@@ -240,11 +240,10 @@ p {
   box-sizing: border-box;
   color: white;
   cursor: pointer;
-  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.4rem;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 600;
+  // font-family: Prototype;
+  font-size: 1.4rem;
   line-height: 1.5rem;
   padding: 0.75rem 1.2rem;
   text-align: center;
@@ -261,7 +260,7 @@ p {
 .back-button {
   display: flex;
   position: absolute;
-  margin-left: 15em;
+  margin-left: 20em;
   margin-top: 2em;
   border-radius: 10px;
   background-color: $main-font-color;
