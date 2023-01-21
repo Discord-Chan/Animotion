@@ -1,5 +1,5 @@
 import styles from '../styles/About.module.scss';
-import { GoTo, concat } from './pages_scripts.js';
+import { GoTo, concat } from '../libs/pages_scripts.js';
 
 export default function About() {
 	return (

@@ -1,4 +1,4 @@
-import { GoTo } from './pages_scripts.js';
+import { GoTo } from '../libs/pages_scripts.js';
 
 export default function About() {
 	return (
