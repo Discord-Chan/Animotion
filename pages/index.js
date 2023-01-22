@@ -1,4 +1,4 @@
-import { GoTo, SelectModel } from '../libs/pages_scripts'
+import { GoTo, SelectModel } from '../libs/pages_scripts';
 
 export default function Home() {
   return (

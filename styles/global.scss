@@ -29,12 +29,17 @@ body {
   height: 100%;
 }
 
+.top-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
 #main-headline {
   font-family: Prototype;
   font-size: 5em;
   color: white;
   text-align: center;
-  margin-top: 0.5em;
   color: $main-font-color;
 
   letter-spacing: 0.1em;
@@ -258,14 +263,11 @@ p {
 }
 
 .back-button {
-  display: flex;
-  position: absolute;
-  margin-left: 20em;
-  margin-top: 2em;
+  height: fit-content;
   border-radius: 10px;
   background-color: $main-font-color;
   color: white;
-  z-index: 999;
+  margin-left: 20em;
 }
 
 .link-button:hover, .back-button:hover {
