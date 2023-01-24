@@ -6,6 +6,7 @@ export default function Home() {
       <p id="logo" className="glitch" data-text="Animotion">
         Animotion
       </p>
+      <p id="select-model-text">click on any model to control it</p>
       <div className="vrm-container">
         <button
           className="vrm-selector glow-on-hover"

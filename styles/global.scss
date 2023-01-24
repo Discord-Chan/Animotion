@@ -29,13 +29,6 @@ body {
   height: 100%;
 }
 
-.top-bar {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-}
-
 #main-headline {
   font-family: Prototype;
   font-size: 5em;
@@ -76,10 +69,8 @@ p {
   font-size: 7em;
   color: $main-font-color;
   text-align: center;
-
-  // TODO
-  // looks good in chrome but not in firefox
-  margin-top: 0.75em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 
   letter-spacing: 0.1em;
   animation: glitch-skew 2.5s infinite linear alternate-reverse;
@@ -132,7 +123,15 @@ p {
 
 /*#endregion*/
 
-/*#region vrm selectors*/
+/*#region vrm selection*/
+
+#select-model-text {
+  // color: white;
+  color: #c6a5f0;
+  font-family: Prototype;
+  text-align: center;
+  font-size: 1.75em;
+}
 
 .vrm-selector {
   margin-left: 7.8em;
@@ -149,7 +148,7 @@ p {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  margin: 5em;
+  margin: 2em 5em 5em 5em;
 }
 
 /*#endregion*/
@@ -237,18 +236,18 @@ p {
 /* tailwind button */
 .link-button {
   height: 2.5em;
-  width: 15em;
-  margin-left: 5em;
-  margin-right: 5em;
+  width: 12em;
+  margin-left: 4.1em;
+  margin-right: 4.1em;
   background-color: $main-font-color;
   border: 1px solid transparent;
   border-radius: 0.75rem;
   box-sizing: border-box;
   color: white;
   cursor: pointer;
-  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 600;
-  // font-family: Prototype;
+  // font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  // font-weight: 600;
+  font-family: Prototype;
   font-size: 1.4rem;
   line-height: 1.5rem;
   padding: 0.75rem 1.2rem;
