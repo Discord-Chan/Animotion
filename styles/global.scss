@@ -33,14 +33,14 @@ body {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  justify-content: center;
 }
 
 #main-headline {
   font-family: Prototype;
   font-size: 5em;
-  color: white;
+  margin-top: 0.5em;
   text-align: center;
-  margin-left: 3.5em;
   color: $main-font-color;
 
   letter-spacing: 0.1em;
@@ -268,7 +268,12 @@ p {
   border-radius: 10px;
   background-color: $main-font-color;
   color: white;
+
+  // resizing window messus up button position, fix later
+  position: absolute;
   margin-left: 20em;
+  margin-top: 2em;
+  z-index: 999;
 }
 
 .link-button:hover, .back-button:hover {
