@@ -1,6 +1,12 @@
+@font-face {
+    font-family: "Prototype";
+    src: url("../public/fonts/Prototype.ttf");
+}
+
 .default_text {
     text-align: center;
     color: white;
+    font-family: Prototype;
 }
 
 .text {
