@@ -1,10 +1,12 @@
-import styles from '../styles/About.module.scss'
-
-const concat = (...classNames) => classNames.join(' ');
+import styles from '../styles/About.module.scss';
+import { GoTo, concat } from '../libs/pages_scripts.js';
 
 export default function About() {
 	return (
   	<>
+    <button className="back-button" onClick={() => { GoTo("/"); }}>
+      <p>back to menu</p>
+    </button>
     <h1 id="main-headline" className="glitch" data-text="About us">About us</h1>
     <p className={styles.text}>
       We are two amazing students of the higher technical college for computer science in Leonding, Austria. <br />

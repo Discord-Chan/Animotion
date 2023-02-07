@@ -1,11 +1,4 @@
-function SelectModel(model) {
-  window.localStorage.setItem("vrm", model);
-  GoTo("webapp/index.html");
-}
-
-function GoTo(link) {
-  window.location.href = link;
-}
+import { GoTo, SelectModel } from '../libs/pages_scripts';
 
 export default function Home() {
   return (
@@ -13,6 +6,7 @@ export default function Home() {
       <p id="logo" className="glitch" data-text="Animotion">
         Animotion
       </p>
+      <p id="select-model-text">Click On Any Model To Control It</p>
       <div className="vrm-container">
         <button
           className="vrm-selector glow-on-hover"
@@ -26,7 +20,7 @@ export default function Home() {
           <img
             className="vrm-image"
             src="https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/cyberlady2_blackbackground.png?v=1673356895538"
-            alt="Cyberlady"
+            alt="cyberlady"
           />
         </button>
 
@@ -35,14 +29,14 @@ export default function Home() {
           type="button"
           onClick={() => {
             SelectModel(
-              "https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/felix.vrm?v=1666724550269"
+              "https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/normalboy.vrm?v=1673786119191"
             );
           }}
         >
           <img
             className="vrm-image"
-            src="https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/vampire_blackbackground.jpg?v=1672419201319"
-            alt="vampireboy"
+            src="https://cdn.glitch.global/14365248-98f0-4e5a-a5a3-1a7cd5ad47c8/normalboy_blackbackground.jpg?v=1674684492990"
+            alt="normalboy"
           />
         </button>
 
@@ -82,7 +76,7 @@ export default function Home() {
             GoTo("about");
           }}
         >
-          Among us
+          About us
         </button>
         <button
           className="link-button"
