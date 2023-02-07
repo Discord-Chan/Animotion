@@ -349,15 +349,15 @@ const drawResults = (results) => {
   canvasCtx.save();
   canvasCtx.clearRect(0, 0, guideCanvas.width, guideCanvas.height);
   drawConnectors(canvasCtx, results.poseLandmarks, POSE_CONNECTIONS, {
-    color: "#00cff7",
+    color: "#a640ff",
     lineWidth: 4,
   });
   drawLandmarks(canvasCtx, results.poseLandmarks, {
-    color: "#ff0364",
+    color: "#f67d92",
     lineWidth: 2,
   });
   drawConnectors(canvasCtx, results.faceLandmarks, FACEMESH_TESSELATION, {
-    color: "#C0C0C070",
+    color: "#FF0000",
     lineWidth: 1,
   });
   if (results.faceLandmarks && results.faceLandmarks.length === 478) {
@@ -365,25 +365,25 @@ const drawResults = (results) => {
       canvasCtx,
       [results.faceLandmarks[468], results.faceLandmarks[468 + 5]],
       {
-        color: "#ffe603",
+        color: "#ff0000",
         lineWidth: 2,
       }
     );
   }
   drawConnectors(canvasCtx, results.leftHandLandmarks, HAND_CONNECTIONS, {
-    color: "#eb1064",
+    color: "#FF1493",
     lineWidth: 5,
   });
   drawLandmarks(canvasCtx, results.leftHandLandmarks, {
-    color: "#00cff7",
+    color: "#a640ff",
     lineWidth: 2,
   });
   drawConnectors(canvasCtx, results.rightHandLandmarks, HAND_CONNECTIONS, {
-    color: "#22c3e3",
+    color: "#a640ff",
     lineWidth: 5,
   });
   drawLandmarks(canvasCtx, results.rightHandLandmarks, {
-    color: "#ff0364",
+    color: "#f67d92",
     lineWidth: 2,
   });
 };
