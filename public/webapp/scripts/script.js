@@ -357,7 +357,7 @@ const drawResults = (results) => {
     lineWidth: 2,
   });
   drawConnectors(canvasCtx, results.faceLandmarks, FACEMESH_TESSELATION, {
-    color: "#FF0000",
+    color: "#fcd4db",
     lineWidth: 1,
   });
   if (results.faceLandmarks && results.faceLandmarks.length === 478) {
@@ -365,7 +365,7 @@ const drawResults = (results) => {
       canvasCtx,
       [results.faceLandmarks[468], results.faceLandmarks[468 + 5]],
       {
-        color: "#ff0000",
+        color: "#fcd4db",
         lineWidth: 2,
       }
     );
